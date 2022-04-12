@@ -1,0 +1,25 @@
+v0.3
+    1. command.web : Added support for unsaved websites
+    2. command.listcommands :  print all saved shortcuts
+    3. Added comments
+    4. New CLI argument :  -y/--yesall : Bypasses any prompts asked for conducting macro
+    5. class command now takes args-NameSpace as a parameter
+
+v0.4
+    1. Default setup location cahnged from C:\Program Files\Do to C:\Program Files\Prosid\Do
+    2. dosettings.yaml shall now be stored at C:\ProgramData\Prosid\Do\
+    3. If building new version on top of old, dosettings.yaml will not get replaced 
+
+v0.5
+    1. Added feature to delete all temporary python dirs created -dp --deletepy
+    1.1 - modified commands.createpyenv to add the newly created dir to yaml file\
+
+    0.5.1 - Added error check for above feature
+
+    0.5.1 - minor correction
+
+v0.6
+    0.6 - Minor changes 
+    0.6.1 - Minor changes
+    0.6.2 - setup.py clutter clear
+    0.6.3 - Minor

@@ -1,0 +1,13 @@
+{
+  pyenv: { defaultdir: ".", envdirs: ["./123"] },
+
+  open: { shortcut: ["exe path of app/ file/directory path"] },
+  # Ensure that the path uses double backward slashes as separators
+  # eg. C:/Windows should be added as C:\\Windows
+
+  web: { shortcut: ["website link"] },
+
+  websettings: { "browserkey": "name of browser eg. chrome , brave, etc" },
+  # May not work with all browsers. Tested with chrome and brave only
+
+}
