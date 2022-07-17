@@ -6,7 +6,7 @@ import yaml
 build_exe_options = {'packages':['pathlib','argparse','yaml','os','datetime','win32com','sys'], #pacakges used
                      'excludes':['tkinter'],'includes':['commands'], 
                      "include_msvcr": True,
-                     'include_files':['icon.ico'],
+                     'include_files':['icon.ico','doo.bat'],
                      "build_exe" : "C:\\Program Files\\Prosid\\Do"}
 
 path = "C:\\ProgramData\\Prosid\\Do"
