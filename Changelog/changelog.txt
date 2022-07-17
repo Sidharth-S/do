@@ -27,3 +27,6 @@ v0.6
 
 v1.0
     - First stable release
+
+v1.1
+    -  Added doo.bat to let user directly use do -o command with ease

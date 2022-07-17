@@ -46,7 +46,7 @@ executables = [Executable(
 
 setup(
     name="do",
-    version="1.0",
+    version="1.1",
     author = "Sidharth S",
     description="Customizable macro tasker",
     executables=executables,

@@ -1,2 +1,2 @@
 @echo off
-do -o "%1"
+do -o %1
