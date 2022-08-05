@@ -24,7 +24,7 @@ class command:
         else: array = [term]
 
         for item in array:
-            os.system(f"start {self.values['websettings']['browserkey']} {item}")
+            os.system(f"{self.values['websettings']['browserpath']} {item}")
         return
 
 

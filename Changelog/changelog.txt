@@ -36,3 +36,6 @@ v1.2
     - optimized setup flow
     - added command logging
     - Added dow.bat to let user directly use do -w command with ease
+
+v1.21
+    - Change method of setting browser(from key to full path of the browser)

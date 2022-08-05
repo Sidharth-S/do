@@ -7,7 +7,7 @@
 
   web: { shortcut: ["website link"] },
 
-  websettings: { "browserkey": "name of browser eg. chrome , brave, etc" },
+  websettings: { "browserpath": "path of browser eg. chrome , brave, etc" },
   # May not work with all browsers. Tested with chrome and brave only
 
 }
