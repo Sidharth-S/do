@@ -1,12 +1,31 @@
 from cx_Freeze import setup, Executable
-import os
+import os,sys
+import subprocess
 import shutil
 import yaml
 
-build_exe_options = {'packages':['pathlib','argparse','yaml','os','datetime','win32com','sys'], #pacakges used
-                     'excludes':['tkinter'],'includes':['commands'], 
+
+
+PACKAGES = ['argparse','yaml','os','datetime','win32com','sys','logging']
+
+installed_packages = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze']).decode('utf-8')
+installed_packages = installed_packages.split('\r\n')
+
+EXCLUDES = {pkg.split('==')[0] for pkg in installed_packages if pkg != ''}
+EXCLUDES.add('tkinter')
+for i in PACKAGES:
+    try:
+        EXCLUDES.os.remove(i)
+    except:pass
+
+with open('requests.log','w') as log:
+    log.write("")
+    log.close()
+
+build_exe_options = {'packages':PACKAGES, #packages used
+                     'excludes':list(EXCLUDES),'includes':['commands'], 
                      "include_msvcr": True,
-                     'include_files':['icon.ico','doo.bat'],
+                     'include_files':['icon.ico','doo.bat','dow.bat','requests.log'],
                      "build_exe" : "C:\\Program Files\\Prosid\\Do"}
 
 path = "C:\\ProgramData\\Prosid\\Do"
@@ -46,7 +65,7 @@ executables = [Executable(
 
 setup(
     name="do",
-    version="1.1",
+    version="1.2",
     author = "Sidharth S",
     description="Customizable macro tasker",
     executables=executables,

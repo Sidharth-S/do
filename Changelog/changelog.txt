@@ -29,4 +29,10 @@ v1.0
     - First stable release
 
 v1.1
-    -  Added doo.bat to let user directly use do -o command with ease
+    - Added doo.bat to let user directly use do -o command with ease
+
+v1.2
+    - Remove python environment creation functions
+    - optimized setup flow
+    - added command logging
+    - Added dow.bat to let user directly use do -w command with ease

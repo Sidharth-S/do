@@ -1,16 +1,14 @@
 import argparse
 from commands import command
 import sys
+import logging
 
 class docli:
     def __init__(self) -> None:
+        logging.basicConfig(filename=r'C:\Program Files\Prosid\Do\requests.log', encoding='utf-8', level=logging.INFO, format='%(asctime)s %(message)s')
+        logging.info(" ".join(sys.argv))
         
         parser = argparse.ArgumentParser(description='All in one macro tasker')
-
-        parser.add_argument('--createpyenv','-py', 
-                            action = "store_true",
-                            dest   = "pyenv",
-                            help   = "Interactive python environment creator")
         
         parser.add_argument('--list','-ls', 
                             action = "store_true",
@@ -43,11 +41,6 @@ class docli:
                             dest   = "settings",
                             help   = "Open settings of program / modify shortcuts")          
 
-        parser.add_argument('--deletepy','-dp', 
-                            action = "store_true",
-                            dest   = "pydel",
-                            help   = "Delete any created python environment directories")  
-
         parser.add_argument('--web','-w',
                             action  = "store",
                             dest    = "web",   
@@ -61,10 +54,6 @@ class docli:
         cmd = command('C:\\ProgramData\\Prosid\\Do\\dosettings.yaml',args=args)
 
         if args.open : cmd.openinstance()
-
-        if args.pydel : cmd.pydel()
-
-        if args.pyenv : cmd.createpyenv()
 
         if args.settings : cmd.opensettings()
 
