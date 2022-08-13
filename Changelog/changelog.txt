@@ -39,3 +39,7 @@ v1.2
 
 v1.21
     - Change method of setting browser(from key to full path of the browser)
+
+v1.22
+    - Now supports opening of multiple web pages in single window
+    - New icon
