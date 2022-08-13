@@ -22,9 +22,9 @@ class command:
         if term  in self.values["web"] :  
             array = self.values["web"][term] 
         else: array = [term]
-
-        for item in array:
-            os.system(f"{self.values['websettings']['browserpath']} {item}")
+        bpath = self.values['websettings']['browserpath']
+        webjoin = " ".join(array)
+        os.system(f'"{bpath}" {webjoin}')
         return
 
 
