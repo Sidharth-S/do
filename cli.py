@@ -2,6 +2,7 @@ import argparse
 from commands import command
 import sys
 import logging
+import shutil
 
 class docli:
     def __init__(self) -> None:
@@ -68,9 +69,13 @@ class docli:
         if args.version : print(cmd.version())
 
         if args.unins : 
-            x = str(input("Do you want to uninstall the application and its associated files (Y/N) : "))
+            x = str(input("Do you want to uninstall the application and its associated files irreversibly (Y/N): "))
             if x not in ['Y','y'] : return
-            cmd.uninstall()
+            shutil.rmtree("C:\Program Files\Prosid\Do")
+            x = input('Do you want to remove the settings file as well("Y/N") ?')
+            if x not in ['Y','y'] : return
+            shutil.rmtree('C:\ProgramData\Prosid\Do')
+            print("Do program removed.")
         pass
 
 

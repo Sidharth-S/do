@@ -49,3 +49,6 @@ V1.23
 
 v1.24
     - Now do.exe added to registry under App Paths, no need for manual addition to path
+
+v1.3
+    - New feature > uninstall 

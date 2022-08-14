@@ -6,7 +6,7 @@ import yaml
 import winreg
 
 print("Setting up pre-requisites")
-PACKAGES = ['argparse','yaml','os','datetime','win32com','sys','logging']
+PACKAGES = ['argparse','yaml','os','datetime','win32com','sys','logging','shutil']
 
 installed_packages = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze']).decode('utf-8')
 installed_packages = installed_packages.split('\r\n')
@@ -67,7 +67,7 @@ print("Starting installation")
 
 setup(
     name="do",
-    version="1.24",
+    version="1.3",
     author = "Sidharth S",
     description="Customizable macro tasker",
     executables=executables,
