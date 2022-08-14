@@ -46,3 +46,6 @@ v1.22
 
 V1.23
     - Modified batch scripts(dow.bat,doo.bat) to exit automatically.
+
+v1.24
+    - Now do.exe added to registry under App Paths, no need for manual addition to path

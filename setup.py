@@ -3,9 +3,9 @@ import os,sys
 import subprocess
 import shutil
 import yaml
+import winreg
 
-
-
+print("Setting up pre-requisites")
 PACKAGES = ['argparse','yaml','os','datetime','win32com','sys','logging']
 
 installed_packages = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze']).decode('utf-8')
@@ -63,9 +63,11 @@ executables = [Executable(
             shortcutName="do",
             shortcutDir="do",)]
 
+print("Starting installation")
+
 setup(
     name="do",
-    version="1.23",
+    version="1.24",
     author = "Sidharth S",
     description="Customizable macro tasker",
     executables=executables,
@@ -73,5 +75,14 @@ setup(
         "build_exe": build_exe_options,
     },
 )
+
+print("Adding software to registry")
+app_path_registry = winreg.ConnectRegistry(None,winreg.HKEY_CURRENT_USER)
+app_path_key = winreg.OpenKey(app_path_registry,r"Software\Microsoft\Windows\CurrentVersion\App Paths")
+
+do_key = winreg.CreateKeyEx(app_path_key,"do.exe",)
+defv = winreg.SetValueEx(do_key,"",0,winreg.REG_SZ,r"C:\Program Files\Prosid\Do\do.exe")
+pathv = winreg.SetValueEx(do_key,"Path",0,winreg.REG_SZ,r"C:\Program Files\Prosid\Do")
+
 
 print("Installation complete !")
